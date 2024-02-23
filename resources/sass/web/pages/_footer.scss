@@ -1,0 +1,19 @@
+.section-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: 15% 70% 30%;
+    // background-color: red;
+    position: absolute;
+    width: 100%;
+
+    border-top: 1px solid #9F9F9F;
+
+    &-copyright {
+        margin-left: 10px;
+    }
+}

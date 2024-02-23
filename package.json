@@ -1,0 +1,25 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "compile:sass": "node-sass resources/sass/admin/main.scss public/designs/css/admin-style.css -w",
+        "compile:sass-fe": "node-sass resources/sass/web/main.scss public/designs/css/style.css -w",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "prod": "npm run production",
+        "production": "mix --production"
+    },
+    "devDependencies": {
+        "axios": "^0.21",
+        "laravel-mix": "^6.0.6",
+        "lodash": "^4.17.19",
+        "postcss": "^8.1.14"
+    },
+    "dependencies": {
+        "14": "^3.1.6",
+        "jquery": "^3.6.0",
+        "node-sass": "^7.0.1"
+    }
+}

@@ -1,0 +1,205 @@
+// Remove float
+.row {
+    zoom: 1;
+    margin-right: -20px;
+    &:before, &:after{
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+
+.col {
+    width: 100%;
+    float: left;
+    padding-right: 20px;
+    box-sizing: border-box;
+
+
+    &-xs {
+        &-12 {
+            width: 100%;
+        }
+        &-11{
+            width: 91.662%;
+        }
+        &-10 {
+            width: 83.332%;
+        }
+        &-9 {
+            width: 75%;
+        }
+        &-8 {
+            width: 66.662%;
+        }
+        &-7 {
+            width: 58.331%;
+        }
+        &-6 {
+            width: 50%;
+        }
+        &-5 {
+            width: 41.662%;
+        }
+        &-4 {
+            width: 33.332%;
+        }
+        &-3 {
+            width: 25%;
+        }
+        &-2 {
+            width: 16.662%;
+        }
+        &-1 {
+            width: 8.332%;
+        }
+    }
+
+}
+
+@include for-small-screen {
+    .row {
+        margin-right: -40px;
+    }
+    .col {
+
+        padding-right: 40px;
+
+        &-sm {
+            &-12 {
+                width: 100%;
+            }
+            &-11{
+                width: 91.662%;
+            }
+            &-10 {
+                width: 83.332%;
+            }
+            &-9 {
+                width: 75%;
+            }
+            &-8 {
+                width: 66.662%;
+            }
+            &-7 {
+                width: 58.331%;
+            }
+            &-6 {
+                width: 50%;
+            }
+            &-5 {
+                width: 41.662%;
+            }
+            &-4 {
+                width: 33.332%;
+            }
+            &-3 {
+                width: 25%;
+            }
+            &-2 {
+                width: 16.662%;
+            }
+            &-1 {
+                width: 8.332%;
+            }
+        }
+    }
+}
+
+
+@include for-medium-screen {
+
+    .row {
+        margin-right: -10px;
+    }
+
+    .col {
+        padding-right: 10px;
+        &-md {
+            &-12 {
+                width: 100%;
+            }
+            &-11{
+                width: 91.662%;
+            }
+            &-10 {
+                width: 83.332%;
+            }
+            &-9 {
+                width: 75%;
+            }
+            &-8 {
+                width: 66.662%;
+            }
+            &-7 {
+                width: 58.331%;
+            }
+            &-6 {
+                width: 50%;
+            }
+            &-5 {
+                width: 41.662%;
+            }
+            &-4 {
+                width: 33.332%;
+                
+            }
+            &-3 {
+                width: 25%;
+            }
+            &-2 {
+                width: 16.662%;
+            }
+            &-1 {
+                width: 8.332%;
+            }
+        }
+    }
+}
+
+@include for-large-screen {
+    .col {
+        &-lg {
+            &-12 {
+                width: 100%;
+            }
+            &-11{
+                width: 91.662%;
+            }
+            &-10 {
+                width: 83.332%;
+            }
+            &-9 {
+                width: 75%;
+            }
+            &-8 {
+                width: 66.662%;
+            }
+            &-7 {
+                width: 58.331%;
+            }
+            &-6 {
+                width: 50%;
+            }
+            &-5 {
+                width: 41.662%;
+            }
+            &-4 {
+                width: 33.332%;
+            }
+            &-3 {
+                width: 25%;
+            }
+            &-2 {
+                width: 16.662%;
+            }
+            &-1 {
+                width: 8.332%;
+            }
+        }
+    }
+}

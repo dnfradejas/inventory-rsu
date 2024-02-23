@@ -1,0 +1,329 @@
+.sidebar {
+    &-desktop {
+        display: none;
+    }
+
+    &-logo {
+        width: 50px;
+        float: left;
+        text-align: center;
+        img {
+            width: 40px;
+            height: auto;
+            margin-top: 5px;
+
+        }
+        
+        @include for-small-screen {
+            width: 100%;
+            float: none;
+            text-align: center;
+
+            img {
+                width: 60px;
+            }
+        }
+    }
+
+    &-mobile {
+        background-color: $color-dark-blue;
+        position: relative;
+        width: 100%;
+        height: 52px;
+        padding: 2px 20px;
+        box-sizing: border-box;
+        .mobilenav-icon {
+            display: none;
+            position: absolute;
+            color: $color-white;
+            top: 17px;
+            right: 7px;
+        }
+        &--topnav {
+            display: block;
+            background-color: inherit;
+            overflow: hidden;
+
+            a {
+                float: left;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                box-sizing: border-box;
+                text-decoration: none;
+                font-size: 17px;
+
+                &:hover {
+                    background-color: #ddd;
+                    color: black;
+                }
+
+                .active {
+                    background-color: #04AA6D;
+                    color: $color-white;
+                }
+            }
+        }
+    }
+
+    @include for-small-screen {
+        
+        &-desktop {
+            display: block;
+            width: 127px;
+            background-color: $color-dark-blue;
+            float: left;
+            height: 150vh;
+            ul {
+                list-style-type: none;
+                margin-left: -40px;
+                text-align: center;
+                li {
+                    padding: 10px 12px;
+                    &:hover {
+                        background-color: $color-grey-primary;
+                    }
+                    & > a {
+                        color: $color-white;
+                        text-decoration: none;
+                    }
+
+                    @include for-small-screen {
+                        margin-left: 40px;
+                    }
+                }
+            }
+        }
+
+        &-mobile {
+            display: none;
+        }
+    }
+
+    @include for-medium-screen {
+        &-desktop {
+            height: 100vh;
+        }
+    }
+
+    
+}
+
+.top_header {
+
+    display: none;
+
+    @include for-small-screen {
+        height: 60px;
+    
+        &--info {
+            float: right;
+        }
+    }
+}
+
+%table_style {
+    border-collapse: collapse;
+    width: 100%;
+    th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: $color-dark-blue;
+        color: white;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+    }
+
+    tr {
+        text-align: center;
+        &:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        &:hover {
+            background-color: #ddd;
+        }
+    }
+}
+.main_content {
+
+    background: inherit;
+    float: left;
+
+
+    @media screen and (min-width: 700px) {
+        width: 100%;
+    }
+
+    @media screen and (min-width: 720px) {
+        width: 83%;
+
+        &--wrapper {
+            width: 100%;
+            
+        }
+    }
+
+    @media screen and(min-width: 769px){
+        width: 83%;
+    }
+
+    @include for-small-screen {
+        width: 89%;
+        &--wrapper {
+            
+            width: 100%;
+
+        }
+    }
+
+    
+
+    @media screen and(min-width: 769px){
+        width: 83%;
+    }
+
+    @media screen and(min-width: 780px){
+        width: 83%;
+    }
+
+    @include for-medium-screen {
+        width: 87%;
+        &--wrapper {
+            
+            width: 100%;
+
+        }
+    }
+
+    @include for-large-screen {
+        width: 90%;
+    }
+
+    .productlist-col, .orderlist-col {
+        padding-right: 0;
+    }
+
+
+
+    &--productlist {
+        padding: 10px 10px;
+        background-color: $color-white;
+        box-sizing: border-box;
+        height: 75vh;
+        width: 99%;
+        overflow-y: scroll;
+        .table {
+            @extend %table_style;
+            
+        }
+
+        @include for-medium-screen {
+            height: 90vh;
+        }
+
+        &-header {
+            width: 100%;
+            margin: 0 auto;
+            margin-top: 10px;
+            height: 47px;
+            &-store {
+                margin-top: 10px;
+                margin-bottom: 10px;
+                & > * {
+                    line-height: 2px;
+                }
+                h3 {
+                    margin-bottom: 18px;
+                }
+            }
+            @include for-small-screen {
+                width: 100%;
+                margin: 0;
+                margin-bottom: 10px;
+
+
+            }
+        }
+
+    }
+
+    &--orderlist {
+        background-color: $color-white;
+        height: 50vh;
+        
+
+        @include for-small-screen {
+            height: 75vh;
+        }
+
+        @include for-medium-screen {
+            height: 90vh;
+        }
+        &-table-cont {
+            padding: 2px 4px;
+            box-sizing: border-box;
+            overflow-y: scroll;
+            height: 70%;
+
+            @include for-small-screen {
+                height: 83%;
+            }
+        }
+        .table {
+            @extend %table_style;
+        }
+
+        &-subtotal {
+            background-color: $color-grey-secondary;
+            box-sizing: border-box;
+            padding: 10px 12px;
+            width: 100%;
+        }
+
+        &-total {
+            
+            box-sizing: border-box;
+            padding: 10px 12px;
+            width: 100%;
+        }
+    }
+}
+
+.pos {
+    &-button {
+        cursor: pointer;
+        &-wrapper {
+            margin-top: 10px;
+        }
+
+        &-row {
+            width: 100%;
+
+            @include for-small-screen {
+                width: 50%;
+                float: right;
+            }
+        }
+
+        padding: 10px 12px;
+        box-sizing: border-box;
+        text-align: center;
+        a {
+            text-decoration: none;
+            color: $color-white;
+        }
+        &-scan {
+            background-color: $color-yellow;
+
+            @include for-small-screen {
+
+            }
+        }
+        &-ordernow {
+            background-color: $color-red;
+        }
+    }
+}

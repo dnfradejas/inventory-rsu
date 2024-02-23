@@ -1,0 +1,29 @@
+.order__export {
+    display: grid;
+
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(2, 2rem);
+    grid-column-gap: .3rem;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+
+
+    @media screen and(max-width: 900px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    &-date {
+        grid-column: 1 / span 3;
+    }
+
+    &-button {
+
+        button {
+            margin-top: 0;
+            height: 39px;
+            width: 100%;
+
+        }
+    }
+
+}

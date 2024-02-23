@@ -1,0 +1,40 @@
+version: "3.2"
+
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: rsu-inventory-db
+    environment:
+      MYSQL_DATABASE: mims
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./database/data:/var/lib/mysql
+    networks:
+      default:
+        ipv4_address: ${DB_HOST}
+    tty: true
+    stdin_open: true
+
+  rsu.inventory.local.com:
+    image: rsu-inventory:latest
+    container_name: rsu-inventory-${CONTAINER_IP}
+    volumes:
+       - ./:/var/www/web
+       - ./nginx/conf.d:/etc/nginx/sites-enabled
+       - ./nginx/cert:/etc/ssl/self-signed
+    networks:
+      default:
+        ipv4_address: ${CONTAINER_IP}
+    tty: true
+    stdin_open: true
+    depends_on:
+      - mysql
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    dns:
+      - 8.8.8.8
+networks:
+  default:
+      name: ${DOCKER_NETWORK}
+      external: true

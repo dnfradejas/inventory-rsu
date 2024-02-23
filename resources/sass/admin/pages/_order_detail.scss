@@ -1,0 +1,94 @@
+.order__detail {
+    display: grid;
+
+    grid-template-rows: 7rem 20vh min-content;
+    grid-template-columns: repeat(8, 1fr);
+
+    &-header {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        border-bottom: 1px solid #ccc;
+    }
+
+    &-customer {
+        // background-color: orchid;
+        grid-column: 1 / -1;
+        grid-row: 2 / 3;
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, min-content);
+    }
+
+    &-products {
+        // background-color: palegreen;
+        grid-column: 1 / -1;
+        grid-row: 3 / 4;
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, min-content);
+        grid-row-gap: .4rem;
+        &-items {
+            border-bottom: 1px solid #ccc;
+            border-top: 1px solid #ccc;
+            grid-column: 1 / -1;
+            grid-row: 1 / 2;
+
+            &-item {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(min-content, 200px));
+                align-items: center;
+
+                &-price {
+                    font-weight: 700;
+                }
+            }
+            
+        }
+
+        &-total {
+            grid-column: 1 / -1;
+            grid-row: 2 / 3;
+            
+            display: grid;
+            grid-template-columns: repeat(3, minmax(min-content, 200px));
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.5rem;
+            &-value {
+                grid-column: 3 / 4;
+            }
+        }
+    }
+}
+.customer {
+    &__info {
+        // background-color: purple;
+        grid-column: 1 / 1;
+        grid-row: 2 / 3;
+    }
+}
+%header_button {
+    padding: .5rem 1.5rem;
+    display: inline-block;
+    margin-top: 11px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+.order__header {
+    &-button {
+        
+        &-1 {
+            @extend %header_button;
+            background-color: paleturquoise;
+        }
+
+        &-2 {
+            @extend %header_button;
+            background-color: #999;
+            color: #fff;
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+    font-family: $roboto-slab;
+    background-color: #f1ede8;
+}
+
+.page-container {
+    position: relative;
+    min-width: 100vh;
+}
+
+.content-wrap {
+
+    @include for-desktop {
+        padding-bottom: 28.5rem; // footer height
+    }
+}

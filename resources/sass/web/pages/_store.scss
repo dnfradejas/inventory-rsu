@@ -1,0 +1,15 @@
+.store-section {
+    margin: 0 auto;
+}
+
+.store-card {
+    text-align: center;
+    height: 300px;
+    max-height: 300px;
+
+    transition: transform .3s;
+}
+
+.store-card:hover {
+    transform: translateY(-.5rem) scale(1.03);
+}

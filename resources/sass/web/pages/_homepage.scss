@@ -1,0 +1,107 @@
+.main_header {
+
+    height: 300px;
+    background-color: $color-grey-primary;
+
+    &--form {
+        display: grid;
+        grid-template-columns: 15% 70% 30%;
+        height: 70px;
+        width: 100%;
+        background-color: $color-black;
+
+        &--search {
+            position: relative;
+            &-input {
+                width: 100%;
+                height: 40px;
+                margin-top: 14px;
+                border-radius: 6px;
+                border: none;
+
+                &--icon {
+                    background-image: url("./assets/icon/search-ico.png");
+                    z-index: 5;
+                    position: absolute;
+                    background-size: cover;
+                    padding: 7px;
+                    top: 14px;
+                    right: 10px;
+                    &-cont {
+                        background-color: yellow;
+                        position: absolute;
+                        top: 14px;
+                        right: 0px;
+                        padding: 20px;
+                        cursor: pointer;
+                        border-radius: 6px;
+                        cursor: pointer;
+                    }
+
+                    
+                    
+                }
+            }
+        }
+    }
+
+    &--logo {
+        position: relative;
+        
+        &-1 {
+            position: absolute;
+            background-image: url('/assets/logo/mims-logo.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            padding: 25px;
+            top: 10px;
+            left: 10px;
+        }
+
+    }
+
+    &--title {
+        margin: 0 auto;
+        text-align: center;
+
+        margin-top: 30px;
+
+        h5 {
+            font-size: 60px;
+            font-weight: 700;
+        }
+    }
+}
+
+
+.main_content {
+    &--stores {
+        margin-top: -40px;
+        &-column {
+            cursor: pointer !important;
+        }
+        .card {
+            &-body {
+                img {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+        &--info {
+            h6 {
+                font-weight: 700;
+            }
+            p {
+                margin-top: -9px;
+                font-size: x-small;
+            }
+        }
+
+        .col-md-3 {
+            &:not(:last-child) {
+                margin-bottom: 25px;
+            }
+        }
+    }
+}

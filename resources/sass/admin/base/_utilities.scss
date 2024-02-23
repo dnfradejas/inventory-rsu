@@ -1,0 +1,89 @@
+
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix:before, 
+.clearfix:after {
+    content: '';
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+
+
+
+.-red, .parsley-required, .parsley-fileextension {
+    color: #dc3545 !important;
+}
+
+.-grey-primary {
+    color: $color-grey-primary;
+}
+
+.-list-none {
+    list-style-type: none;
+}
+
+.-text-center {
+    text-align: center;
+}
+
+.-bold {
+    font-weight: bold;
+}
+
+.-hidden {
+    display: none;
+}
+
+.-visible {
+    display: block;
+}
+
+.mb-small {
+    margin-bottom: 1rem;
+}
+
+.bg-orange {
+    background-color: $color-orange;
+    border: 1px solid $color-orange;
+}
+
+.bg-blue {
+    background-color: $color-primary-blue;
+}
+
+
+.-text-white {
+    color: $color-white !important;
+}
+
+.font-light {
+    font-weight: 300;
+}
+.font-medium {
+    font-weight: 400;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.font-small {
+    font-size: small;
+}
+
+.small-circle {
+    height: 7rem;
+    width: 7em;
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);;
+    clip-path: circle(50% at 50% 50%);
+}
+
+.disable-cursor {
+    cursor: not-allowed !important;
+}

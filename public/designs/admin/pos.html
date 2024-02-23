@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MIMS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- CSS only -->
+  <link rel="stylesheet" href="/designs/css/admin-style.css">
+  
+</head>
+<body>
+
+    <div class="page-container">
+
+        <div class="sidebar-mobile">
+            <div class="sidebar-logo">
+                <img src="../../assets/logo/mims-logo.png" alt="MIMS"/>
+            </div>
+            <a href="javascript:void(0);" class="mobilenav-icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+            <div class="sidebar-mobile--topnav">
+                <a class="active" href="#home">Dashboard</a>
+                <a href="#news">Products</a>
+            </div>
+        </div>
+        
+        <div class="sidebar-desktop">
+            <div class="sidebar-logo">
+                <img src="../../assets/logo/mims-logo.png" alt="MIMS"/>
+            </div>
+
+            <ul>
+                <li><a href="">Dashboard</a></li>
+                <li><a href="">Products</a></li>
+                
+            </ul>
+        </div>
+
+    
+        <div class="main_content">
+
+            <div class="main_content--wrapper">
+
+                <div class="row">
+                    <div class="productlist-col col col-md-9">
+                        <div class="main_content--productlist">
+                            <div class="main_content--productlist-header row">
+                                <div class="col col-xs-8 col-sm-9 main_content--productlist-header-store">
+                                    <h3>Shapes</h3>
+                                    <p class="font-small">Liwayway, Odiongan, Romblon</p>
+                                </div>
+                                <div class="col col-xs-4 col-sm-3 main_content--productlist-header-date">
+                                    <h3>Today</h3>
+                                    <p class="font-small">Monday</p>
+                                </div>
+                            </div>
+
+                            <table class="table table-responsive">
+                                <thead>
+                                    <th>Product Name</th>
+                                    <th>Brand</th>
+                                    <th>Category</th>
+                                    <th>SKU</th>
+                                    <th>Code</th>
+                                    <th>Inventory</th>
+                                    <th>Price</th>
+                                    <th>Discount Price</th>
+                                    <th>Action</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Product Name</td>
+                                        <td>Brand</td>
+                                        <td>Category</td>
+                                        <td>SKU</td>
+                                        <td>Code</td>
+                                        <td>Inventory</td>
+                                        <td>Price</td>
+                                        <td>Discount Price</td>
+                                        <td>Action</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>    
+                    </div>
+
+                    <div class="orderlist-col col col-md-3">
+                        <div class="main_content--orderlist">
+                            <div class="main_content--orderlist-table-cont">
+                                <h3>Order List</h3>
+                                <table class="table table-responsive">
+                                    <thead>
+                                        <th>Product Name</th>
+                                        <th>Quantity</th>
+                                        <th>Action</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Product Name</td>
+                                            <td>Quantity</td>
+                                            <td>Action</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="main_content--orderlist-subtotal row">
+                                            
+                                <div class="main_content--orderlist-subtotal-label col col-xs-8 col-md-7">Subtotal</div>
+                                <div class="main_content--orderlist-subtotal-value col col-xs-3 col-md-3">Value</div>
+                            </div>
+            
+                            <div class="main_content--orderlist-total row">
+                                <label class="main_content--orderlist-total-label col col-xs-8 col-md-7">Total</label>
+                                <label class="main_content--orderlist-total-value col col-xs-3 col-md-3">Value</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pos-button-wrapper">
+                    <div class="pos-button-row row">
+                        <div class="pos-button-scan pos-button col col-xs-6 col col-sm-6">
+                            <a href="javascript:void(0);">Scan Product Barcode</a>
+                        </div>
+                        <div class="pos-button-ordernow pos-button col col-xs-6 col col-sm-6">
+                            <a href="javascript:void(0);">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <input type="text" class="input modal-input" placeholder="Enter quantity">
+
+        </div>
+    </div>
+
+
+
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        const modal = document.querySelector(".modal");
+        // const trigger = document.querySelector(".pos-button-scan");
+        // const closeButton = document.querySelector(".close-button");
+
+        // function windowOnClick(event) {
+        //     if (event.target === modal) {
+        //         toggleModal();
+        //     }
+        // }
+
+
+        (function($){
+
+            initEvents();
+
+            function toggleModal() {
+                modal.classList.toggle("show-modal");
+            }
+
+            function initEvents() {
+                
+                function scanBarcodeButtonHandler(evt) {
+                    evt.preventDefault();
+                    toggleModal();
+                    $(".modal-text").text("Init Barcode");
+                }
+
+                function closeModalButtonHandler(evt) {
+                    evt.preventDefault();
+                    toggleModal();
+                }
+
+                $(".pos-button-scan").on('click', scanBarcodeButtonHandler);
+                $(".close-button").on('click', closeModalButtonHandler);
+
+            }
+        })(jQuery);
+
+        // trigger.addEventListener("click", toggleModal);
+        // closeButton.addEventListener("click", toggleModal);
+        // window.addEventListener("click", windowOnClick);
+    </script>
+</body>
+</html>
