@@ -485,24 +485,25 @@ class OrderController extends Controller
         $inflector = Inflector::get('en');
         
         $orders = DB::table('orders')
-                   ->select(
-                       'orders.*',
-                       'order_products.product_name',
-                       'order_products.product_brand',
-                       'order_products.product_category',
-                       'order_products.sku',
-                       'order_products.barcode',
-                       'order_products.price',
-                       'order_products.final_price',
-                       'order_products.discount_price',
-                       'order_products.quantity',
-                       'order_products.total',
-                       'order_products.uom',
-                       'order_products.image'
-                   )
-                   ->join('order_products', 'orders.id', '=', 'order_products.order_id')
-                   ->where('orders.status', Order::ORDER_PAID)
-                   ->get();
+                    ->select(
+                        'orders.*',
+                        'order_products.product_name',
+                        'order_products.product_brand',
+                        'order_products.product_category',
+                        'order_products.sku',
+                        'order_products.barcode',
+                        'order_products.price',
+                        'order_products.final_price',
+                        'order_products.discount_price',
+                        'order_products.quantity',
+                        'order_products.total',
+                        'order_products.uom',
+                        'order_products.image'
+                    )
+                    ->join('order_products', 'orders.id', '=', 'order_products.order_id')
+                    ->where('orders.status', Order::ORDER_PAID)
+                    // ->where('orders.reference_number', $orderRef)
+                    ->get();
         return view('admin.pages.order.receipt.template', ['orders' => $orders, 'inflector' => $inflector]);
     }
 }
